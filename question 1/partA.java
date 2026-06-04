@@ -1,1 +1,15 @@
+public Account(String requestedName)
+{
+    if (isAvailable(requestedName)) {
+        username = requestedName;
+    } else {
+        int suffix = 1;
+        String candidate = requestedName + suffix;
+        while (!isAvailable(candidate)) {
+            suffix++;
+            candidate = requestedName + suffix;
+        }
+        username = candidate;
+    }
+}
 
